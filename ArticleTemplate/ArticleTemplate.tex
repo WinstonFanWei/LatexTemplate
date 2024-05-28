@@ -1,0 +1,204 @@
+\documentclass[UTF8]{ctexart}
+
+% 本模版示范和环境载入部分可以用第一行的收缩键把示范收缩掉，需要的时候再打开。从40行开始进行示范。
+
+% 更改页边距
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% 设置引用
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{amsmath} % 数学公式
+\usepackage{amssymb} % 符号引入
+\usepackage{hhline}
+
+% 长注释
+\usepackage{comment}
+\begin{comment}
+    这里是一个长注释。
+\end{comment}
+
+% 为公式自动编号
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+\setcounter{tocdepth}{3} % 控制目录深度
+
+\title{标题}
+\author{
+    Winston \and
+    Amy
+}
+% \date{2024年5月28日}
+\date{\today}
+
+
+% 大段示范
+
+% 1. 可调节大小的表格和引用
+% \ref{tab:example}
+% \nameref{tab:example}
+% \begin{table}[htbp]
+%     \captionsetup{position=top, skip=8pt}
+%     \caption{表格标题}
+%     \centering
+%     \begin{adjustbox}{width=0.5\textwidth}
+%         \begin{tabular}{c|c|c}
+%             \hline
+%             \textbf{\small 姓名} & \textbf{\small 学号} & \textbf{\small 成绩}  \\
+%             \hline
+%             \small winston & \small 1111111 & \small 1111111   \\
+%             \hline
+%             \small hello & \small 2222222 & \small 1111111     \\
+%             \hline
+%             \small Amy & \small 3333333 & \small 1111111       \\
+%             \hline
+%         \end{tabular}
+%     \end{adjustbox}
+%     \label{tab:example}
+% \end{table}
+
+% 2. 不自动排版的图片和引用
+% \ref{fig:pic}
+% \nameref{fig:pic}
+% \begin{figure}[htbp]
+%     \captionsetup{position=bottom, skip=8pt}
+% 	\centering
+% 	\includegraphics[width=0.5\textwidth]{image_url_not_include_png}
+%     \caption{图片标题}
+% 	\label{fig:pic}
+% \end{figure}
+
+% 3. 文献引用
+% \cite{ref1} 引用一篇文章
+% \begin{thebibliography}{99}
+
+%     \bibitem{ref1} Kingma, D. P., \& Ba, J. (2014, December 22). Adam: A Method for Stochastic Optimization. ArXiv.Org. \url{https://arxiv.org/abs/1412.6980v9}
+
+% \end{thebibliography}
+
+% 4. 文字中套公式和引用
+% 带括号引用\eqref{eq:eg} 不带括号引用\ref{eq:eg}
+% {
+% 	We can use $公式$ to solve the equations.
+% 	Or we can use matrix equation
+% 	\begin{gather}
+% 		\pi_{i-1}(t) \notag \\
+%       \text{If we have } \pi_{i-1}(t) \label{eq:eg}
+% 	\end{gather}
+% }
+
+% 5. 列表
+
+% 有序
+% \begin{enumerate}
+%     \item 第一项
+% \end{enumerate}
+
+% 无序
+% \begin{itemize}
+%     \item 第一项
+% \end{itemize}
+
+% 6. 大括号
+
+% 左侧大括号
+% \begin{gather}
+% 	\left\{
+% 	\begin{array}{ll}
+% 		\dot{\pi_0(t)} = \mu \pi_1(t)                              \\
+% 		\dot{\pi_1(t)} = 2\mu \pi_2(t) - \mu \pi_1(t)              \\
+% 		\dot{\pi_2(t)} = 3\mu \pi_3(t) - 2\mu \pi_2(t)             \\
+% 		\text{\quad\quad\quad\quad}\vdots                          \\
+% 		\dot{\pi_i(t)} = (i+1)\mu \pi_{i+1}(t) - i\mu \pi_{i}(t) \\
+% 		\text{\quad\quad\quad\quad}\vdots                          \\
+% 		\dot{\pi_N(t)} = -N\mu \pi_N(t)
+% 	\end{array}
+% 	\right. \notag
+% \end{gather}
+
+% 上方大括号
+% \begin{gather}
+%     \dot{\pi_0(t)} = \overbrace{[\mu_2 \pi_3(t)]}^{\text{into}} - \overbrace{[\lambda \pi_0(t)]}^{\text{outof}}
+% \end{gather}
+
+% 7. 矩阵
+% \[ \mathbf{Q} = \left(
+%     \begin{array}{ccccc}
+%             -\lambda & \lambda  & 0        & 0        & \ldots \\
+%             0        & -\lambda & \lambda  & 0        & \ldots \\
+%             0        & 0        & -\lambda & \lambda  & \ldots \\
+%             0        & 0        & 0        & -\lambda & \ldots \\
+%             \vdots   & \vdots   & \vdots   & \vdots   & \ddots \\
+%         \end{array} \right) \]
+
+% 8. 自定义命令
+% \newcommand{\myeqref}[1]{公式 \eqref{#1}}
+
+
+% 正文开始
+
+\begin{document}
+
+% 封面
+\pagestyle{empty} % 设置封面不显示页号
+\vspace*{12em} % 垂直间距
+% 标题
+\begin{center}
+    {\Huge 标题}\\
+    \bigskip
+    \bigskip
+    {\LARGE 副标题}
+\end{center}
+\vspace{12em} % 垂直间距
+
+% 信息
+\begin{center}
+    {\Large
+        \begin{tabular}{rl}
+            姓名: & \underline{\makebox[10em][c]{Winston}} \\
+            学号: & \underline{\makebox[10em][c]{111111111}} \\
+            班级: & \underline{\makebox[10em][c]{hello school}} \\
+        \end{tabular}
+    }
+\end{center}
+
+\clearpage  % 这一页结束后，页码重新开始
+
+\tableofcontents % 目录
+\clearpage
+
+\pagestyle{plain}
+\maketitle
+
+\section{Abstract}
+\newpage
+
+\section{Introduction}
+\newpage
+
+\section{Related Work}
+\newpage
+
+\section{Model}
+\subsection{Model a}
+\subsection{Model b}
+\newpage
+
+\section{Experiments}
+\newpage
+
+\section{Other Studies}
+\newpage
+
+\section{Conclusion}
+\newpage
+
+\end{document}
